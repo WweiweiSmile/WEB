@@ -1,6 +1,8 @@
 function doit(n) {
-	return new Promise((resolve) => {
-		setTimeout(() => resolve(parseInt(n) + 1000), n);
+	return new MyPromise((resolve) => {
+		setTimeout(() => {
+			resolve(parseInt(n) + 1000);
+		}, n);
 	});
 }
 function step1(n) {
@@ -19,7 +21,8 @@ function step3(n) {
 function dodo() {
 	console.time('dodo');
 	const time1 = 200;
-	step1(time1).then((time2) => step2(time2)).then((time3) => step3(time3)).then(() => console.log('执行完毕'));
+	step1(time1).then((time2) => step2(time2)).then((time3) => step3(time3));
+	// .then(() => console.log('执行完毕'));
 }
 
 dodo();

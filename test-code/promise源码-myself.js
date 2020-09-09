@@ -7,9 +7,9 @@
 const PENDING = 'pending';
 const FULFILLED = 'fulfilled';
 const REJECTED = 'rejected';
-function Promised(executor) {
+function MyPromise(executor) {
 	let self = this;
-	self.status = PEDINGED;
+	self.status = PENDING;
 	self.onFulfilled = [];
 	self.onRejected = [];
 	function resolve(value) {
@@ -45,7 +45,7 @@ function Promised(executor) {
     如果onFulfilled 和onRejected 执行的时候发生异常将异常 通过reject送出去
     
 */
-Promise.prototype.then = function(onFulfilled, onRejected) {
+MyPromise.prototype.then = function(onFulfilled, onRejected) {
 	onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : (value) => value;
 	onRejected =
 		typeof onRejected === 'function'
@@ -53,7 +53,7 @@ Promise.prototype.then = function(onFulfilled, onRejected) {
 			: (reason) => {
 					throw reason;
 				};
-	let Promise2 = new Promise((resolve, reject) => {
+	let Promise2 = new MyPromise((resolve, reject) => {
 		let self = this;
 		if (self.status === FULFILLED) {
 			try {
@@ -78,6 +78,7 @@ Promise.prototype.then = function(onFulfilled, onRejected) {
 				try {
 					setTimeout(() => {
 						let x = onFulfilled(self.value);
+
 						resolvePromise(Promise2, x, resolve, reject);
 					});
 				} catch (e) {
@@ -96,7 +97,35 @@ Promise.prototype.then = function(onFulfilled, onRejected) {
 			});
 		}
 	});
+	return Promise2;
 };
+// 如果x 与promise2 相等说明存在异常
 // resolvePromise是为了处理的Promise的链式调用而存在的
+// 如果 x 是promise、thenable、function 将提前执行 x.then方法，拿到x.resolve 所传递的值
+// 否则 直接resolve到下个 链式的.then方法中
 //
-function resolvePromise(promise2, x, resolve, reject) {}
+function resolvePromise(promise2, x, resolve, reject) {
+	if (promise2 === x) [ reject(new TypeError('Chainning cycle')) ];
+	if ((x && typeof x === 'object') || typeof x === 'function') {
+		try {
+			let then = x.then;
+			if (then === 'function') {
+				then.call(
+					x,
+					(y) => {
+						resolvePromise(promise2, y, resolve, reject);
+					},
+					(r) => {
+						reject(r);
+					}
+				);
+			} else {
+				resolve(x);
+			}
+		} catch (e) {
+			reject(e);
+		}
+	} else {
+		resolve(x);
+	}
+}
