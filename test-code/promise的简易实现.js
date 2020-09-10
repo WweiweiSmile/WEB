@@ -78,7 +78,6 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
 				try {
 					setTimeout(() => {
 						let x = onFulfilled(self.value);
-
 						resolvePromise(Promise2, x, resolve, reject);
 					});
 				} catch (e) {
@@ -109,7 +108,7 @@ function resolvePromise(promise2, x, resolve, reject) {
 	if ((x && typeof x === 'object') || typeof x === 'function') {
 		try {
 			let then = x.then;
-			if (then === 'function') {
+			if (typeof then === 'function') {
 				then.call(
 					x,
 					(y) => {
