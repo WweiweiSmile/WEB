@@ -1,0 +1,50 @@
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.cl::after {
+	display: block;
+	width: 0px;
+	height: 0px;
+	content: '';
+	clear: both;
+}
+.site_header {
+	width: 1226px;
+	height: 100px;
+	margin: 0 auto;
+	.header_logo {
+		position: relative;
+		width: 55px;
+		height: 55px;
+		top: 50%;
+		left: 0%;
+		transform: translateY(-50%);
+		background: url(../../assets/mi-logo.png) #ff6700 no-repeat center center;
+		background-size: cover;
+	}
+	.navtab {
+		margin-left: 150px;
+		font-size: 18px;
+
+		ul {
+			padding: 0px;
+			margin: 0;
+			li {
+				list-style-type: none;
+				display: inline-block;
+				margin-right: 20px;
+				line-height: 100px;
+				cursor: pointer;
+			}
+		}
+	}
+	.search {
+		line-height: 100px;
+		width: 200px;
+	}
+}

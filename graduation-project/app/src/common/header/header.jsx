@@ -1,16 +1,15 @@
 import React from 'react';
-import { Layout } from 'antd';
-let { Header, Footer, Content } = Layout;
+import { SiteTop } from './site-top';
+import { SiteHeader } from './site-header';
+import './header.scss';
 export default class header extends React.Component {
 	render() {
 		return (
-			<Layout className={Layout}>
-				<Header>
-					<div>lllllll</div>
-				</Header>
-				<Content> </Content>
-				<Footer> </Footer>
-			</Layout>
+			<div>
+				<SiteTop />
+
+				<SiteHeader />
+			</div>
 		);
 	}
 }
