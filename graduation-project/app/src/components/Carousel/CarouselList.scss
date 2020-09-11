@@ -1,0 +1,34 @@
+.carousel_list {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+	width: 234px;
+	height: 460px;
+	background: rgba($color: #918b87, $alpha:.5);
+	ul {
+		list-style-type: none;
+		width: 100%;
+		height: 100%;
+		padding: 30px 0px;
+		margin: 0;
+		li {
+			position: relative;
+			color: #ffffff;
+			height: 40px;
+			line-height: 40px;
+			margin: 0 auto;
+			&:hover {
+				background: #ff6700;
+			}
+			span:nth-child(odd) {
+				position: absolute;
+				left: 40px;
+			}
+			span:nth-child(even) {
+				position: absolute;
+				right: 40px;
+			}
+		}
+	}
+}

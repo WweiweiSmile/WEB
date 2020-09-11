@@ -1,0 +1,23 @@
+.carousel_product_list {
+	display: inline-block;
+	vertical-align: top;
+	ul {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		width: 265px;
+		height: 460px;
+		background: white;
+		li {
+			vertical-align: top;
+
+			width: 265px;
+			height: 76px;
+			padding: 18px;
+			img {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+}

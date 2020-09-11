@@ -1,7 +1,7 @@
 import React from 'react';
 import { SiteTop } from './site-top';
 import { SiteHeader } from './site-header';
-import './header.scss';
+// import style from './header.module.scss';
 export default class header extends React.Component {
 	render() {
 		return (
