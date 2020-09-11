@@ -14,11 +14,11 @@ export class SiteHeader extends React.Component {
 	render() {
 		return (
 			<div className={style.site_header}>
-				<div className="${style.header_logo}  ${style.fl}" />
-				<div className="${style.navtab} ${style.fl}">
+				<div className={`${style.header_logo}  ${style.fl}`} />
+				<div className={`${style.navtab} ${style.fl}`}>
 					<ul>{this.state.navtab.map((value, index) => <li key={index}>{value}</li>)}</ul>
 				</div>
-				<div className="${style.search} ${style.fr}">
+				<div className={`${style.search} ${style.fr}`}>
 					<Search placeholder="input search text" onSearch={(value) => console.log(value)} />
 				</div>
 			</div>
