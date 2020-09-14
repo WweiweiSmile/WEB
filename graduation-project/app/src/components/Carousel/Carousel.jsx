@@ -17,63 +17,163 @@ export default class CarouselBox extends React.Component {
 		super(props);
 		this.state = {
 			CarouselImgs,
+			whereLiHover: 0,
 			products: [
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题1'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f5aad5f708998e76742d75d7c6b1394c.png?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题2'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a7a4f24061860901f724b6ba6d75fd9.png?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题3'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cc563c76a7383d8030d1c23f31c60cb9.png?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题4'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f382e29367ad5852fc1adfdae1332d5c.png?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题5'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg?thumb=1&w=40&h=40',
-					title: '标题6'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0803dc7125ffa3447b04b1ae60f57a2b.jpg?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题7'
-				},
-				{
-					target: '#',
-					imgURL:
-						'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
-					title: '标题8'
-				}
-			]
+				[
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题1'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f5aad5f708998e76742d75d7c6b1394c.png?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题2'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a7a4f24061860901f724b6ba6d75fd9.png?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题3'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cc563c76a7383d8030d1c23f31c60cb9.png?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题4'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f382e29367ad5852fc1adfdae1332d5c.png?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题5'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg?thumb=1&w=40&h=40',
+						title: '标题6'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0803dc7125ffa3447b04b1ae60f57a2b.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题7'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					}
+				],
+				[
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					},
+					{
+						target: '#',
+						imgURL:
+							'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg?thumb=1&w=40&h=40&f=webp&q=90',
+						title: '标题8'
+					}
+				]
+			],
+			isHide: false
 		};
 	}
+	getProductsData = () => {
+		return this.state.products[this.state.whereLiHover];
+	};
+	carouselListHover = (value) => {
+		this.setState({ whereLiHover: value });
+		this.setState({ isHide: false });
+	};
+	carouselListLeave = () => {
+		this.setState({ isHide: true });
+	};
 	render() {
 		return (
 			<div className={style.carousel_box}>
-				<CarouselList />
-				<CarouselProducts products={this.state.products} />
+				<CarouselList carouselListHover={this.carouselListHover} carouselListLeave={this.carouselListLeave} />
+				<CarouselProducts isHide={this.state.isHide} products={this.getProductsData()} />
 				<Carousel autoplay>
 					{this.state.CarouselImgs.map((CarouselImg, index) => (
 						<div key={index}>
@@ -87,16 +187,6 @@ export default class CarouselBox extends React.Component {
 							/>
 						</div>
 					))}
-					<div>
-						<img
-							style={{
-								width: '1226px',
-								height: '460px'
-							}}
-							alt={'图片'}
-							src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a7a4f24061860901f724b6ba6d75fd9.png?thumb=1&w=40&h=40&f=webp&q=90"
-						/>
-					</div>
 				</Carousel>
 			</div>
 		);

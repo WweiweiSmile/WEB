@@ -1,5 +1,5 @@
 import React from 'react';
-import './site-top.scss';
+import s from './site-top.module.scss';
 export class SiteTop extends React.Component {
 	constructor(props) {
 		super(props);
@@ -24,19 +24,19 @@ export class SiteTop extends React.Component {
 	}
 	render() {
 		return (
-			<div className="site_top">
-				<div className="site_top_content cl">
-					<div className="fl">
-						<ul className="navbar_ul">
+			<div className={`${s.site_top}`}>
+				<div className={`${s.site_top_content} ${s.cl}`}>
+					<div className={` ${s.fl}`}>
+						<ul className={`${s.navbar_ul}`}>
 							{this.state.navtabs.map((value, index) => <li key={index}>{value}</li>)}
 						</ul>
 					</div>
-					<div className="fr buy_cart">
+					<div className={`${s.fr} ${s.buy_cart}`}>
 						购物车
 						<span>(0)</span>
 					</div>
-					<div className="fr">
-						<ul className="navbar_ul">
+					<div className={` ${s.fr}`}>
+						<ul className={` ${s.navbar_ul}`}>
 							{this.state.navtabsUser.map((value, index) => <li key={index}>{value}</li>)}
 						</ul>
 					</div>

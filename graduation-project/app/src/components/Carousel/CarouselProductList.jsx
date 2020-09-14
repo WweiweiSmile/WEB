@@ -1,10 +1,10 @@
 import React from 'react';
-import './CarouselProductList.scss';
+import s from './CarouselProductList.module.scss';
 
 export default class CarouselProductList extends React.Component {
 	render() {
 		return (
-			<div className="carousel_product_list">
+			<div className={`${s.carousel_product_list}`}>
 				<ul>
 					{this.props.productList.map((value, index) => (
 						<li key={index}>

@@ -1,29 +1,21 @@
 import React from 'react';
 import CarouselProductList from './CarouselProductList.jsx';
-import './CarouselProducts.scss';
+import s from './CarouselProducts.module.scss';
 let handleProducts = (value) => {
+	if (value === undefined) return [];
 	let carouselProductLists = [];
 	for (let i = 0; i < value.length; i += 6) {
 		carouselProductLists.push(value.slice(i, i + 6));
 	}
-	console.log(carouselProductLists);
 	return carouselProductLists;
 };
 
 export default class CarouselProducts extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			CarouselProductLists: handleProducts(this.props.products)
-		};
-	}
-
 	render() {
+		let CarouselProductLists = handleProducts(this.props.products);
 		return (
-			<div className="carousel_products">
-				{this.state.CarouselProductLists.map((value, index) => (
-					<CarouselProductList className="carousel_product_list" productList={value} key={index} />
-				))}
+			<div className={`${s.carousel_products} ${this.props.isHide ? s.hide : s.show} `}>
+				{CarouselProductLists.map((value, index) => <CarouselProductList productList={value} key={index} />)}
 			</div>
 		);
 	}

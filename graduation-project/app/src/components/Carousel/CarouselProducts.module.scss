@@ -1,9 +1,15 @@
+.hide {
+	display: none;
+}
+.show {
+	display: inline-block;
+}
 .carousel_products {
 	position: absolute;
 	left: 234px;
 	top: 0px;
 	z-index: 1;
-	display: inline-block;
+
 	white-space: nowrap;
 	background: transparent;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, .18);
