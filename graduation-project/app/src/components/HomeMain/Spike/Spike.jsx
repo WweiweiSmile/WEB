@@ -1,5 +1,7 @@
 import React from 'react';
 import s from './Spike.module.scss';
+import SpikeCountdown from './SpikeCountdown';
+import SpikeList from './SpikeList';
 export default class Spike extends React.Component {
 	constructor(props) {
 		super(props);
@@ -8,9 +10,11 @@ export default class Spike extends React.Component {
 	render() {
 		return (
 			<div className={`${s.Spike}`}>
-				<div>
-					<span>小米闪购</span>
+				<div className={`${s.title}`}>
+					<h2>小米闪购</h2>
 				</div>
+				<SpikeCountdown />
+				<SpikeList />
 			</div>
 		);
 	}

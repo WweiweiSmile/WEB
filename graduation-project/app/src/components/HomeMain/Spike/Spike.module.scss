@@ -1,2 +1,13 @@
 .Spike {
+	width: 1226px;
+	height: 398px;
+	margin: 0 auto;
+	.title {
+		height: 58px;
+		h2 {
+			font-size: 22px;
+			line-height: 58px;
+			font-weight: 400;
+		}
+	}
 }

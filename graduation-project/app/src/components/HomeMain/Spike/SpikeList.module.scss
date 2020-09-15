@@ -1,0 +1,115 @@
+.spike_list {
+	position: relative;
+	.controls {
+		position: absolute;
+		top: -30px;
+		right: 0px;
+		z-index: 2;
+		span {
+			display: inline-block;
+			box-sizing: content-box;
+			width: 24px;
+			height: 16px;
+			padding: 3px 5px;
+			margin-left: -1px;
+			border: 1px solid #e0e0e0;
+			text-align: center;
+			line-height: 16px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 500;
+			&:hover {
+				transition: .5s;
+				color: #ff6700;
+			}
+		}
+	}
+	.borderColor_1 {
+		border-top: 1px solid blueviolet;
+	}
+	.borderColor_2 {
+		border-top: 1px solid pink;
+	}
+	.borderColor_3 {
+		border-top: 1px solid green;
+	}
+	.borderColor_4 {
+		border-top: 1px solid red;
+	}
+	.borderColor_5 {
+		border-top: 1px solid blue;
+	}
+	.spike_goods {
+		position: relative;
+		width: 978px;
+		height: 340px;
+		margin-left: 14px;
+		box-sizing: content-box;
+		overflow: hidden;
+		float: left;
+		ul {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			display: flex;
+			box-sizing: content-box;
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+			height: 340px;
+			transition: 0.5s;
+			li {
+				width: 234px;
+				float: left;
+
+				margin-right: 14px;
+				background: #ffffff;
+				text-align: center;
+				a {
+					display: block;
+					width: 234px;
+					height: 300px;
+					padding-top: 39px;
+					box-sizing: content-box;
+					.content {
+						.thumb {
+							width: 160px;
+							margin: 0 auto 22px;
+							img {
+								width: 160px;
+								height: 160px;
+								text-align: center;
+							}
+						}
+						h3 {
+							margin: 0 20px 3px;
+							font-size: 14px;
+							font-weight: 400;
+							text-overflow: ellipsis;
+							color: #212121;
+							overflow: hidden;
+							white-space: nowrap;
+						}
+						p {
+							height: 18px;
+							margin: 0 20px 12px;
+							font-size: 12px;
+							color: #b0b0b0;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							white-space: nowrap;
+						}
+						.price {
+							span {
+								color: #ff6709;
+							}
+							del {
+								color: #b0b0b0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

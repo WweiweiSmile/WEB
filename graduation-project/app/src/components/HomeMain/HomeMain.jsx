@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Main.module.scss';
+import s from './HomeMain.module.scss';
 import Spike from './Spike/Spike';
-export default class HomeMain extends React.Componennt {
+export default class HomeMain extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
