@@ -1,0 +1,52 @@
+.BrickBoxTitle {
+	position: relative;
+	height: 58px;
+	h2 {
+		margin: 0;
+		padding: 0;
+		font-size: 22px;
+		font-weight: 200;
+		line-height: 58px;
+		color: #333333;
+	}
+	.more {
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		&:hover {
+			a {
+				transition: all .3s linear;
+				color: #ff6700;
+				i {
+					transition: all .3s linear;
+					background: #ff6700;
+				}
+			}
+		}
+		a {
+			font-size: 0px;
+			line-height: 58px;
+			color: #333333;
+
+			span {
+				font-size: 16px;
+				vertical-align: middle;
+			}
+			i {
+				display: inline-block;
+				box-sizing: content-box;
+				vertical-align: middle;
+				width: 12px;
+				height: 12px;
+				padding: 4px;
+				margin-left: 8px;
+				border-radius: 16px;
+				font-size: 12px;
+				font-weight: 700;
+				line-height: 58px;
+				background: #4e4442;
+			}
+		}
+	}
+}

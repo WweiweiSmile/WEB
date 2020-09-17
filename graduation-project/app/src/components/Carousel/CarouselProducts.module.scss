@@ -1,15 +1,19 @@
 .hide {
-	display: none;
+	// display: none;
+	opacity: 0;
+	visibility: hidden;
 }
 .show {
-	display: inline-block;
+	// display: inline-block;
+	opacity: 1;
+	visibility: visible;
 }
 .carousel_products {
 	position: absolute;
 	left: 234px;
 	top: 0px;
 	z-index: 1;
-
+	transition: all .2s linear;
 	white-space: nowrap;
 	background: transparent;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, .18);

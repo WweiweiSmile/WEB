@@ -11,7 +11,7 @@ function App() {
 	<Carousel></Carousel>
 	<Hero></Hero>
 	<HomeMain></HomeMain>
-
+	
 	</>
 
 	

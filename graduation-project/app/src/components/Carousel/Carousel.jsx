@@ -171,7 +171,7 @@ export default class CarouselBox extends React.Component {
 	};
 	render() {
 		return (
-			<div className={style.carousel_box}>
+			<div onMouseLeave={this.carouselListLeave} className={style.carousel_box}>
 				<CarouselList carouselListHover={this.carouselListHover} carouselListLeave={this.carouselListLeave} />
 				<CarouselProducts isHide={this.state.isHide} products={this.getProductsData()} />
 				<Carousel autoplay>

@@ -9,11 +9,7 @@ export default class CarouselList extends React.Component {
 	render() {
 		return (
 			<div className={`${s.carousel_list}`}>
-				<ul
-					onMouseLeave={(e) => {
-						this.props.carouselListLeave();
-					}}
-				>
+				<ul>
 					<li
 						onMouseEnter={(e) => {
 							this.props.carouselListHover(0);
